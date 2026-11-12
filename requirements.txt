@@ -1,0 +1,11 @@
+numpy==2.2.6
+pandas==2.3.3
+scikit-learn==1.7.2
+lightgbm==4.7.0
+optuna==5.0.0
+fairlearn==0.14.0
+matplotlib==3.10.9
+joblib==1.6.0
+fastapi==0.162.4
+uvicorn==0.54.0
+pydantic==2.14.3

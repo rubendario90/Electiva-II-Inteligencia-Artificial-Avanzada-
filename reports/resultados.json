@@ -1,0 +1,247 @@
+{
+  "division": {
+    "entrenamiento": 3500,
+    "validacion": 750,
+    "prueba": 750
+  },
+  "ablacion_sin_texto": {
+    "accuracy": 0.6307,
+    "f1_macro": 0.6165,
+    "f1_ponderado": 0.6291,
+    "top3_accuracy": 0.896
+  },
+  "comparacion_validacion": {
+    "Regresión logística (línea base)": {
+      "accuracy": 0.6493,
+      "f1_macro": 0.6394,
+      "f1_ponderado": 0.6486,
+      "top3_accuracy": 0.9107
+    },
+    "Random Forest": {
+      "accuracy": 0.6027,
+      "f1_macro": 0.5857,
+      "f1_ponderado": 0.5968,
+      "top3_accuracy": 0.9
+    },
+    "LightGBM (sin ajustar)": {
+      "accuracy": 0.6293,
+      "f1_macro": 0.6153,
+      "f1_ponderado": 0.628,
+      "top3_accuracy": 0.8893
+    },
+    "LightGBM (ajustado con Optuna)": {
+      "accuracy": 0.6627,
+      "f1_macro": 0.6482,
+      "f1_ponderado": 0.6596,
+      "top3_accuracy": 0.9053
+    }
+  },
+  "optuna": {
+    "pruebas": 60,
+    "mejor_f1_validacion": 0.6482,
+    "mejores_hiperparametros": {
+      "n_estimators": 200,
+      "learning_rate": 0.010133815882870658,
+      "num_leaves": 10,
+      "max_depth": 6,
+      "min_child_samples": 41,
+      "subsample": 0.9341170591860862,
+      "colsample_bytree": 0.5682365324444469,
+      "reg_lambda": 0.9828575310943021
+    }
+  },
+  "prueba_modelo_final": {
+    "accuracy": 0.6773,
+    "f1_macro": 0.6647,
+    "f1_ponderado": 0.6737,
+    "top3_accuracy": 0.9253
+  },
+  "reporte_por_clase": {
+    "amortiguador_danado": {
+      "precision": 0.799,
+      "recall": 0.8109,
+      "f1-score": 0.8049,
+      "support": 201.0
+    },
+    "bujes_desgastados": {
+      "precision": 0.625,
+      "recall": 0.5063,
+      "f1-score": 0.5594,
+      "support": 158.0
+    },
+    "espiral_vencido": {
+      "precision": 0.6939,
+      "recall": 0.5812,
+      "f1-score": 0.6326,
+      "support": 117.0
+    },
+    "muelle_fatigado": {
+      "precision": 0.6494,
+      "recall": 0.7692,
+      "f1-score": 0.7042,
+      "support": 65.0
+    },
+    "sin_falla_suspension": {
+      "precision": 0.58,
+      "recall": 0.5979,
+      "f1-score": 0.5888,
+      "support": 97.0
+    },
+    "terminal_rotula": {
+      "precision": 0.6224,
+      "recall": 0.7946,
+      "f1-score": 0.698,
+      "support": 112.0
+    }
+  },
+  "equidad_modelo_final": {
+    "tipo_vehiculo": {
+      "por_grupo": {
+        "camioneta": {
+          "accuracy": 0.614,
+          "f1_macro": 0.515,
+          "casos": 171
+        },
+        "carga": {
+          "accuracy": 0.6479,
+          "f1_macro": 0.4345,
+          "casos": 71
+        },
+        "particular": {
+          "accuracy": 0.7232,
+          "f1_macro": 0.595,
+          "casos": 419
+        },
+        "servicio_publico": {
+          "accuracy": 0.6067,
+          "f1_macro": 0.4569,
+          "casos": 89
+        }
+      },
+      "brecha_max": {
+        "accuracy": 0.1164,
+        "f1_macro": 0.1604
+      }
+    },
+    "origen_marca": {
+      "por_grupo": {
+        "china": {
+          "accuracy": 0.6774,
+          "f1_macro": 0.6289,
+          "casos": 62
+        },
+        "tradicional": {
+          "accuracy": 0.6773,
+          "f1_macro": 0.6644,
+          "casos": 688
+        }
+      },
+      "brecha_max": {
+        "accuracy": 0.0001,
+        "f1_macro": 0.0355
+      }
+    },
+    "rango_antiguedad": {
+      "por_grupo": {
+        "0-5 años": {
+          "accuracy": 0.629,
+          "f1_macro": 0.629,
+          "casos": 124
+        },
+        "13+ años": {
+          "accuracy": 0.7002,
+          "f1_macro": 0.6789,
+          "casos": 417
+        },
+        "6-12 años": {
+          "accuracy": 0.6603,
+          "f1_macro": 0.6487,
+          "casos": 209
+        }
+      },
+      "brecha_max": {
+        "accuracy": 0.0712,
+        "f1_macro": 0.0499
+      }
+    }
+  },
+  "mitigacion_reponderacion": {
+    "prueba": {
+      "accuracy": 0.6707,
+      "f1_macro": 0.6553,
+      "f1_ponderado": 0.6668,
+      "top3_accuracy": 0.912
+    },
+    "equidad": {
+      "tipo_vehiculo": {
+        "por_grupo": {
+          "camioneta": {
+            "accuracy": 0.6199,
+            "f1_macro": 0.519,
+            "casos": 171
+          },
+          "carga": {
+            "accuracy": 0.6338,
+            "f1_macro": 0.4155,
+            "casos": 71
+          },
+          "particular": {
+            "accuracy": 0.7112,
+            "f1_macro": 0.5821,
+            "casos": 419
+          },
+          "servicio_publico": {
+            "accuracy": 0.6067,
+            "f1_macro": 0.4392,
+            "casos": 89
+          }
+        },
+        "brecha_max": {
+          "accuracy": 0.1045,
+          "f1_macro": 0.1666
+        }
+      },
+      "origen_marca": {
+        "por_grupo": {
+          "china": {
+            "accuracy": 0.6613,
+            "f1_macro": 0.6154,
+            "casos": 62
+          },
+          "tradicional": {
+            "accuracy": 0.6715,
+            "f1_macro": 0.6553,
+            "casos": 688
+          }
+        },
+        "brecha_max": {
+          "accuracy": 0.0102,
+          "f1_macro": 0.0399
+        }
+      },
+      "rango_antiguedad": {
+        "por_grupo": {
+          "0-5 años": {
+            "accuracy": 0.621,
+            "f1_macro": 0.6186,
+            "casos": 124
+          },
+          "13+ años": {
+            "accuracy": 0.6906,
+            "f1_macro": 0.6647,
+            "casos": 417
+          },
+          "6-12 años": {
+            "accuracy": 0.6603,
+            "f1_macro": 0.6465,
+            "casos": 209
+          }
+        },
+        "brecha_max": {
+          "accuracy": 0.0697,
+          "f1_macro": 0.0461
+        }
+      }
+    }
+  }
+}

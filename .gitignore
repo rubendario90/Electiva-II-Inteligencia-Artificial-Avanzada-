@@ -1,0 +1,16 @@
+# Entorno virtual y caché de Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Archivos temporales de Office y del editor
+~$*
+*.tmp
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Videos (GitHub no acepta archivos de más de 100 MB; subirlos a YouTube o Drive)
+*.mp4

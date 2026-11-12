@@ -1,0 +1,46 @@
+Entrenamiento=3500  Validación=750  Prueba=750
+Regresión logística (línea base)    {'accuracy': 0.6493, 'f1_macro': 0.6394, 'f1_ponderado': 0.6486, 'top3_accuracy': 0.9107}
+Random Forest                       {'accuracy': 0.6027, 'f1_macro': 0.5857, 'f1_ponderado': 0.5968, 'top3_accuracy': 0.9}
+LightGBM (sin ajustar)              {'accuracy': 0.6293, 'f1_macro': 0.6153, 'f1_ponderado': 0.628, 'top3_accuracy': 0.8893}
+LightGBM sin texto (ablación)       {'accuracy': 0.6307, 'f1_macro': 0.6165, 'f1_ponderado': 0.6291, 'top3_accuracy': 0.896}
+Mejores hiperparámetros: {'n_estimators': 200, 'learning_rate': 0.010133815882870658, 'num_leaves': 10, 'max_depth': 6, 'min_child_samples': 41, 'subsample': 0.9341170591860862, 'colsample_bytree': 0.5682365324444469, 'reg_lambda': 0.9828575310943021} F1 val: 0.6482
+PRUEBA: {'accuracy': 0.6773, 'f1_macro': 0.6647, 'f1_ponderado': 0.6737, 'top3_accuracy': 0.9253}
+                      precision    recall  f1-score   support
+
+ amortiguador_danado      0.799     0.811     0.805       201
+   bujes_desgastados      0.625     0.506     0.559       158
+     espiral_vencido      0.694     0.581     0.633       117
+     muelle_fatigado      0.649     0.769     0.704        65
+sin_falla_suspension      0.580     0.598     0.589        97
+     terminal_rotula      0.622     0.795     0.698       112
+
+            accuracy                          0.677       750
+           macro avg      0.662     0.677     0.665       750
+        weighted avg      0.678     0.677     0.674       750
+
+
+Equidad por tipo_vehiculo (brecha F1=0.1604):
+                  accuracy  f1_macro  casos
+tipo_vehiculo                              
+camioneta           0.6140    0.5150    171
+carga               0.6479    0.4345     71
+particular          0.7232    0.5950    419
+servicio_publico    0.6067    0.4569     89
+
+Equidad por origen_marca (brecha F1=0.0355):
+              accuracy  f1_macro  casos
+origen_marca                           
+china           0.6774    0.6289     62
+tradicional     0.6773    0.6644    688
+
+Equidad por rango_antiguedad (brecha F1=0.0499):
+                  accuracy  f1_macro  casos
+rango_antiguedad                           
+0-5 años            0.6290    0.6290    124
+13+ años            0.7002    0.6789    417
+6-12 años           0.6603    0.6487    209
+
+MITIGADO: {'accuracy': 0.6707, 'f1_macro': 0.6553, 'f1_ponderado': 0.6668, 'top3_accuracy': 0.912}
+Brecha tipo_vehiculo mitigada: {'accuracy': 0.1045, 'f1_macro': 0.1666}
+
+Modelo guardado en models/modelo_diagnostico.joblib; resultados en reports/
